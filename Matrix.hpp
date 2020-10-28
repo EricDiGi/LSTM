@@ -14,22 +14,27 @@ class Matrix{
         Matrix();
         Matrix(int x, int y);
         Matrix(int x, int y, std::string n);
+        Matrix(int x, int y, double** mat, std::string n);
         ~Matrix();
         void setName(std::string n);
+        void at(int x, int y, int data);
 
         //Initial population
         void zeros(); //populate matrix with zeros
         void ones();
 
         //Arithmatic
-        void dot(Matrix &m);
+        Matrix dot(Matrix &m);
 
         //reshape
         void transpose();
         void T();
 
         //Metrix
-        int* shape();
+        int width();
+        int height();
+        double** getMat();
+        std::string getName();
 
         friend std::ostream &operator<< (std::ostream &out, const Matrix &m){
             std::string comma;
