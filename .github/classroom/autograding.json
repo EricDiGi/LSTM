@@ -1,13 +1,24 @@
 {
 	"tests": [
 		{
+		"name": "Make Vanilla",
+		"setup": "",
+		"run": "make clean Vanilla",
+		"input": "",
+		"output": "All tests passed (10 assertions in 1 test case)",
+		"comparison": "included",
+		"timeout": 10,
+		"points": 50
+	},
+		{
 			"name": "Memory leak check",
 			"setup": "sudo apt-get update -y && sudo apt-get install -y valgrind && make all",
 			"run" : "valgrind --leak-check-full --error-exitcode=1 testVanilla",
 			"input": "",
 			"output": "",
 			"comparison":"included",
-			"timeout": 10
+			"timeout": 10,
+			"points": 50
 		}
 	]
 }
