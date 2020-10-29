@@ -1,5 +1,11 @@
+#define _USE_MATH_DEFINES
+
 #include <iostream>
 #include <string>
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+#include <cmath>
 #include "Matrix.hpp"
 
 using namespace std;
@@ -70,6 +76,28 @@ void Matrix::ones(){
     }
 }
 
+void Matrix::randn(){
+    double max = 4.0; double r; double base;
+    double sum = 0; double mean; double N = 0;
+    srand(time(NULL));
+    for(int i = 0; i < this->h; i++){
+        for(int j = 0; j < this->w; j++){
+            base = rand() % (int)max;
+            r = base + ((double)(rand()%(int)max) / max);
+            this->mat[i][j] = r;
+            N++;
+            sum += r;
+        }
+    }
+    mean = sum / N;
+    double stdev = stdDev(mean, N);
+    for(int i = 0; i < this->h; i++){
+        for(int j = 0; j < this->w; j++){
+            this->mat[i][j] = normalDist(rand()%(int)max, stdev,mean);
+        }
+    }
+}
+
 void Matrix::transpose(){
     double** newMat = new double*[this->w];
     for(int i = 0; i < this->w; i++){
@@ -125,6 +153,23 @@ int Matrix::height(){
 
 double** Matrix::getMat(){
     return this->mat;
+}
+
+double Matrix::stdDev(double m, int n){
+    double sum = 0;
+    for(int i = 0; i < this->h; i++){
+        for(int j = 0; j < this->w; j++){
+            sum += pow((this->mat[i][j] - m),2);
+        }
+    }
+    return sqrt(sum/(double)n);
+}
+
+double Matrix::normalDist(int x, double stdev, double m){
+    //cout << "mean: " << m << "\tstdev: " << stdev << endl;
+    double exponent = -0.5 * pow(((double)x - m)/stdev, 2);
+    double base = (1/(stdev * sqrt(2*M_PI))) * pow(M_E,exponent);
+    return base; 
 }
 
 string Matrix::getName(){
