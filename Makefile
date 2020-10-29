@@ -6,12 +6,12 @@ OBJECTS = $(SRCS: .hpp=.o)
 
 all: Matrix Vanilla
 
-Matrix: $(OBJECTS) testMatrix.cpp Matrix.cpp
-	$(CXX) $(CXXFLAGS) -o $@ $^
-
-Vanilla: $(OBJECTS) testVanilla.cpp Vanilla.cpp Matrix.cpp
-	$(CXX) $(CXXFLAGS) -o $@ $^
-
 clean:
 	rm -rf *.dSYM
-	$(RM) *.o *.gc* test/*.o core main
+	$(RM) *.o *.gc* test/*.o Vanilla Matrix core main
+
+Matrix: $(OBJECTS) testMatrix.cpp Matrix.cpp Matrix.hpp
+	$(CXX) $(CXXFLAGS) -o $@ $^
+
+Vanilla: $(OBJECTS) testVanilla.cpp Vanilla.cpp Vanilla.hpp Matrix.cpp Matrix.hpp
+	$(CXX) $(CXXFLAGS) -o $@ $^
