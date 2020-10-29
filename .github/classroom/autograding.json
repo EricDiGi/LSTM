@@ -13,7 +13,7 @@
 		{
 			"name": "Memory leak check",
 			"setup": "sudo apt-get update -y && sudo apt-get install -y valgrind && make all",
-			"run" : "valgrind --leak-check-full --error-exitcode=1 testVanilla",
+			"run" : "valgrind --leak-check-full --error-exitcode=1 Vanilla",
 			"input": "",
 			"output": "",
 			"comparison":"included",
