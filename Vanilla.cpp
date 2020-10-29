@@ -25,5 +25,5 @@ Vanilla::Vanilla(){
     cout << "BOOOOOOOOO" << endl;
 }
 
-Vanilla::~Vanilla(){
-}
+/*Vanilla::~Vanilla(){
+}*/

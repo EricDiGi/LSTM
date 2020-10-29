@@ -10,7 +10,7 @@
 		{
 			"name": "Memory leak check",
 			"setup": "sudo apt-get update -y && sudo apt-get install -y valgrind && make Vanilla",
-			"run" : "valgrind --leak-check=yes --error-exitcode=1 Vanilla",
+			"run" : "valgrind --leak-check=yes --error-exitcode=1 ./Vanilla",
 			"comparison":"included",
 			"timeout": 10,
 			"points": 50

@@ -14,7 +14,7 @@ class Vanilla{
         Matrix By;
     public:
         Vanilla();
-        ~Vanilla();
+        //~Vanilla();
 
 };
 
