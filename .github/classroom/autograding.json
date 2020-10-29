@@ -3,7 +3,7 @@
 		{
 		"name": "Make Vanilla",
 		"setup": "",
-		"run": "make clean Vanilla",
+		"run": "make Vanilla",
 		"input": "",
 		"output": "All tests passed (10 assertions in 1 test case)",
 		"comparison": "included",
