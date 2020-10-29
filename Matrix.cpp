@@ -51,9 +51,9 @@ Matrix::Matrix(int x, int y, double** mat, string n){
 
 Matrix::~Matrix(){
     for(int i = 0; i < h; i++){
-        delete this->mat[i];
+        delete[] this->mat[i];
     }
-    delete this->mat;
+    delete[] this->mat;
 }
 
 void Matrix::setName(string n){

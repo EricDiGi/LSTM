@@ -6,8 +6,8 @@ using namespace std;
 
 Vanilla::Vanilla(){
     this->hidden = Matrix(3,3,"hidden");
-    this->hidden.zeros();
-
+    //this->hidden.zeros();
+/*
     this->W_hh = Matrix(3,3,"W_hh");
     this->W_hh.randn();
 
@@ -16,7 +16,7 @@ Vanilla::Vanilla(){
     cout << "here 2" << endl;
     //this->W_xh.randn();
 
-    /*this->W_hy = Matrix(3,3,"W_hy");//.randn();
+    this->W_hy = Matrix(3,3,"W_hy");//.randn();
     this->W_hy.randn();
     this->Bh = (Matrix(3,1,"Bh"));//.randn();
     this->Bh.randn();
@@ -25,5 +25,6 @@ Vanilla::Vanilla(){
     cout << "BOOOOOOOOO" << endl;
 }
 
-/*Vanilla::~Vanilla(){
-}*/
+Vanilla::~Vanilla(){
+    this->hidden = Matrix();
+}

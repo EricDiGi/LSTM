@@ -5,6 +5,6 @@
 using namespace std;
 
 int main(){
-    Vanilla a = Vanilla();
+    Vanilla();
     cout << "END " << endl;
 }
