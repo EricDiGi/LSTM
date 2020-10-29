@@ -32,12 +32,15 @@ Matrix::Matrix(int x, int y){
 }
 
 Matrix::Matrix(int x, int y, string n){
+    cout << "very top";
     this->name = n;
     this->h = y; this->w = x;
     this->mat = new double*[h];
+    cout << "top";
     for(int i = 0; i < h; i++){
         this->mat[i] = new double[w];
     }
+    cout << "work" << endl;
 }
 
 Matrix::Matrix(int x, int y, double** mat, string n){
@@ -85,7 +88,7 @@ void Matrix::randn(){
         for(int j = 0; j < this->w; j++){
             base = rand() % (int)max;
             r = base + ((double)(rand()%(int)max) / max);
-            this->mat[i][j] = r;
+            //this->mat[i][j] = r;
             N++;
             sum += r;
         }
@@ -95,6 +98,16 @@ void Matrix::randn(){
     for(int i = 0; i < this->h; i++){
         for(int j = 0; j < this->w; j++){
             this->mat[i][j] = normalDist(rand()%(int)max, stdev,mean);
+        }
+    }
+    cout << "randn"<< endl;
+}
+
+void Matrix::randd(){
+    srand(time(NULL));
+    for(int i = 0; i < this->h; i++){
+        for(int j = 0; j < this->w; j++){
+            this->mat[i][j] = (double)rand();
         }
     }
 }

@@ -5,10 +5,10 @@
 #include <string>
 class Matrix{
     private:
-        double** mat;
-        int h;
-        int w; 
-        std::string name;
+        double** mat = NULL;
+        int h = 0;
+        int w = 0; 
+        std::string name = "";
     public:
         //Construct & destruct
         Matrix();
@@ -23,6 +23,7 @@ class Matrix{
         void zeros(); //populate matrix with zeros
         void ones();
         void randn(); //random doubles from the standard normal distribution
+        void randd();
 
         //Arithmatic
         Matrix dot(Matrix &m);
