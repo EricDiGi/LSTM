@@ -4,8 +4,6 @@
 		"name": "Make Vanilla",
 		"setup": "",
 		"run": "make clean Vanilla",
-		"input": "",
-		"output": "All tests passed (10 assertions in 1 test case)",
 		"timeout": 10,
 		"points": 50
 	},
