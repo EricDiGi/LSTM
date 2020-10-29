@@ -28,8 +28,9 @@ int main(){
     cout << m2;
     cout << m1;
     
-    Matrix D = m2.dot(m1);
-    D.randn();
+    Matrix D = m1.dot(m2);
     cout << D;
-    cout << (m1+m2);
+    D.randn();
+    cout << D.tanH();
+    //cout << (m1+m2);
 }

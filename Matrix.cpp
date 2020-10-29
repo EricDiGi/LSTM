@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <cmath>
+#include <bits/stdc++.h>
 #include "Matrix.hpp"
 
 using namespace std;
@@ -141,6 +142,20 @@ Matrix Matrix::dot(Matrix &m){
     }
     
     return Matrix(m.width(), this->h,temp, this->name+"."+m.getName());
+}
+
+Matrix Matrix::tanH(){
+    double** nMat = NULL;
+    if(this->mat == NULL){return Matrix();}
+    nMat = new double*[this->h];
+    //double v;
+    for(int i = 0; i < this->h; i++){
+        nMat[i] = new double[this->w];
+        for(int j = 0; j < this->w; j++){
+            nMat[i][j] = tanh(this->mat[i][j]);
+        }
+    }
+    return Matrix(this->w, this->h, nMat, this->name);
 }
 
 int Matrix::width(){

@@ -26,6 +26,7 @@ class Matrix{
 
         //Arithmatic
         Matrix dot(Matrix &m);
+        Matrix tanH();
 
 
         //reshape
