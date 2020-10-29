@@ -6,4 +6,5 @@ using namespace std;
 
 int main(){
     Vanilla();
+    cout << "END" << endl;
 }
